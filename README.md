@@ -17,3 +17,6 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Для получения пива нажмите на кнопку 'Like" или 'Dislike'. Оно будет добавляться в 'Favorite beer' сайдбара (если понравилось), или же будет предложен новый вариант.
