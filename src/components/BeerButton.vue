@@ -1,24 +1,27 @@
 <template>
 <button>
-  Like
+  {{ text }}
 </button>
 </template>
 
 <script>
 export default {
-  name: "LikeButton"
+  props: {
+    text: {
+      type: String,
+      require: true,
+    }
+  }
 }
 </script>
 
 <style scoped>
 button {
+  width: 100px;
   color: white;
   text-transform: uppercase;
 
   margin: 10px;
   padding: 10px;
-
-  background-color: green;
-  border-radius: 10px;
 }
 </style>

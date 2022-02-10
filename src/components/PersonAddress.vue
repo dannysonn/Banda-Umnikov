@@ -1,31 +1,29 @@
 <template>
   <div class="person__item">
-    <div class="address">
-      <h2>Address</h2>
-      <div class="address__city">
-        <h4>City:</h4>
-        {{ city }}
-      </div>
-      <div class="address__street_name">
-        <h4>Street name:</h4>
-        {{ street_name }}
-      </div>
-      <div class="address__street_address">
-        <h4>Street address:</h4>
-        {{ street_address }}
-      </div>
-      <div class="address__zip_code">
-        <h4>Zip code:</h4>
-        {{ zip_code }}
-      </div>
-      <div class="address__state">
-        <h4>State:</h4>
-        {{ state }}
-      </div>
-      <div class="address__country">
-        <h4>Country:</h4>
-        {{ country }}
-      </div>
+    <div class="section__title">Address</div>
+    <div class="address__section">
+      <span>City</span>
+      <span><b>{{ city }}</b></span>
+    </div>
+    <div class="address__section">
+      <span>Street name</span>
+      <span><b>{{ street_name }}</b></span>
+    </div>
+    <div class="address__section">
+      <span>Street address</span>
+      <span><b>{{ street_address }}</b></span>
+    </div>
+    <div class="address__section">
+      <span>Zip code</span>
+      <span><b>{{ zip_code }}</b></span>
+    </div>
+    <div class="address__section">
+      <span>State</span>
+      <span><b>{{ state }}</b></span>
+    </div>
+    <div class="address__section">
+      <span>Country</span>
+      <span><b>{{ country }}</b></span>
     </div>
   </div>
 </template>
@@ -62,6 +60,21 @@ export default {
 </script>
 
 <style scoped>
-.address {
+* {
+  color: black;
+}
+
+.address__section {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 2rem 1rem;
+  margin: 1rem 0;
+
+  border-bottom: 1px solid #B3B3B3;
+}
+
+.address__section span:first-child {
+  color: #B3B3B3;
 }
 </style>

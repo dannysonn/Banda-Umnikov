@@ -1,22 +1,21 @@
 <template>
   <div class="person__item">
+    <div class="section__title">Your plan</div>
     <div class="subscription">
-      <h2>Subscription</h2>
       <div class="subscription__plan">
-        <h4>Plan:</h4>
-        {{ plan }}
+        <h2>{{ plan }}</h2>
       </div>
-      <div class="subscription__status">
-        <h4>Status:</h4>
-        {{ status }}
+      <div class="subscription__section">
+        <span>Status</span>
+        <span><b>{{ status }}</b></span>
       </div>
-      <div class="subscription__payment">
-        <h4>Payment:</h4>
-        {{ payment }}
+      <div class="subscription__section">
+        <span>Payment</span>
+        <span><b>{{ payment }}</b></span>
       </div>
-      <div class="subscription__term">
-        <h4>Term:</h4>
-        {{ term }}
+      <div class="subscription__section">
+        <span>Term</span>
+        <span><b>{{ term }}</b></span>
       </div>
     </div>
   </div>
@@ -46,7 +45,27 @@ export default {
 </script>
 
 <style scoped>
-.subscription {
+* {
+  color: black;
+}
 
+.subscription {
+  border: 1px solid #869940;
+}
+
+.subscription__plan {
+  padding: 2rem;
+
+  background-color: #869940;
+}
+
+.subscription__section {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.subscription__section span:first-child {
+  color: #B3B3B3;
 }
 </style>

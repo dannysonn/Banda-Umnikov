@@ -1,27 +1,25 @@
 <template>
   <div class="person__item">
-    <div class="person__info">
-      <h2>Main info</h2>
-      <div class="person__firstName">
-        <h4>First name:</h4>
-        <span>{{ first_name }}</span>
-      </div>
-      <div class="person__lastName">
-        <h4>Last name:</h4>
-        {{ last_name }}
-      </div>
-      <div class="person__username">
-        <h4>Username:</h4>
-        {{ username }}
-      </div>
-      <div class="person__gender">
-        <h4>Gender:</h4>
-        {{ gender }}
-      </div>
-      <div class="person__birthday">
-        <h4>Date of Birth:</h4>
-        {{ birthday }}
-      </div>
+    <div class="section__title">Main info</div>
+    <div class="info__section">
+      <span>First name</span>
+      <span><b>{{ first_name }}</b></span>
+    </div>
+    <div class="info__section">
+      <span>Last name</span>
+      <span><b>{{ last_name }}</b></span>
+    </div>
+    <div class="info__section">
+      <span>Username</span>
+      <span><b>{{ username }}</b></span>
+    </div>
+    <div class="info__section">
+      <span>Gender</span>
+      <span><b>{{ gender }}</b></span>
+    </div>
+    <div class="info__section">
+      <span>Date of Birth</span>
+      <span><b>{{ birthday }}</b></span>
     </div>
   </div>
 </template>
@@ -55,7 +53,21 @@ export default {
 </script>
 
 <style scoped>
-  .person__firstName {
-    display: flex;
-  }
+* {
+  color: black;
+}
+
+.info__section {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 2rem 1rem;
+  margin: 1rem 0;
+
+  border-bottom: 1px solid #B3B3B3;
+}
+
+.info__section span:first-child {
+  color: #B3B3B3;
+}
 </style>

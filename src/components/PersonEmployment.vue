@@ -1,17 +1,16 @@
 <template>
   <div class="person__item">
-    <div class="employment">
-      <h2>Employment</h2>
-      <div class="employment__title">
-        <h4>Title:</h4>
-        {{ title }}
-      </div>
-      <h4>Key skill:</h4>
-      <div class="employment__key-skill">
-        {{ key_skill }}
-      </div>
+    <div class="section__title">Employment</div>
+    <div class="employment__section">
+      <span>Title</span>
+      <span><b>{{ title }}</b></span>
+    </div>
+    <div class="employment__section">
+      <span>Key skill</span>
+      <span><b>{{ key_skill }}</b></span>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -30,7 +29,22 @@ export default {
 </script>
 
 <style scoped>
-.employment {
-
+* {
+  color: black;
 }
+
+.employment__section {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 2rem 1rem;
+  margin: 1rem 0;
+
+  border-bottom: 1px solid #B3B3B3;
+}
+
+.employment__section span:first-child {
+  color: #B3B3B3;
+}
+
 </style>

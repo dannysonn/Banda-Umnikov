@@ -1,15 +1,13 @@
 <template>
   <div class="person__item">
-    <div class="contacts">
-      <h2>Contacts</h2>
-      <div class="contacts__email">
-        <h4>Email:</h4>
-        {{ email }}
-      </div>
-      <div class="contacts__phone">
-        <h4>Phone number:</h4>
-        {{ phone_number }}
-      </div>
+    <div class="section__title">Contacts</div>
+    <div class="contacts__section">
+      <span>Email</span>
+      <span><b>{{ email }}</b></span>
+    </div>
+    <div class="contacts__section">
+      <span>Phone number:</span>
+      <span><b>{{ phone_number }}</b></span>
     </div>
   </div>
 </template>
@@ -31,5 +29,21 @@ export default {
 </script>
 
 <style scoped>
+* {
+  color: black;
+}
 
+.contacts__section {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 2rem 1rem;
+  margin: 1rem 0;
+
+  border-bottom: 1px solid #B3B3B3;
+}
+
+.contacts__section span:first-child {
+  color: #B3B3B3;
+}
 </style>
