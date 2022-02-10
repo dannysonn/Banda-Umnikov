@@ -2,7 +2,7 @@
   <div class="app">
     <div class="person">
 
-      <h1 class="app__title">Personal account</h1>
+      <h1 class="app__title">Profile</h1>
 
       <person-avatar :avatar="user.avatar"/>
 
@@ -21,8 +21,49 @@
 
     </div>
 
-    <div>
-      {{ beer }}
+    <div class="beer">
+      <h2>Proposed beer</h2>
+      <div class="beer__brand">
+        <span><b>Brand:</b> {{beer.brand}}</span>
+      </div>
+      <div class="beer__name">
+        <span><b>Name:</b> {{beer.name}}</span>
+      </div>
+      <div class="beer__style">
+        <span><b>Style:</b> {{beer.style}}</span>
+      </div>
+      <div class="beer__hop">
+        <span><b>Hop:</b> {{beer.hop}}</span>
+      </div>
+      <div class="beer__yeast">
+        <span><b>Yeast:</b> {{beer.yeast}}</span>
+      </div>
+      <div class="beer__malts">
+        <span><b>Malts:</b> {{beer.malts}}</span>
+      </div>
+      <div class="beer__ibu">
+        <span><b>Ibu:</b> {{beer.ibu}}</span>
+      </div>
+      <div class="beer__alcohol">
+        <span><b>alcohol:</b> {{beer.alcohol}}</span>
+      </div>
+      <div class="beer__blg">
+        <span><b>Blg:</b> {{beer.blg}}</span>
+      </div>
+      <div v-if="likedBeer.length > 0" class="beer__like">
+        <span><b>Favorite beer:</b> {{likedBeer}}</span>
+      </div>
+<!--      brand: '',-->
+<!--      name: '',-->
+<!--      style: '',-->
+<!--      hop: '',-->
+<!--      yeast: '',-->
+<!--      malts: '',-->
+<!--      ibu: '',-->
+<!--      alcohol: '',-->
+<!--      blg: '',-->
+      <dislike-button @click="fetchBeer" style="background-color: darkmagenta"/>
+      <like-button @click="likeBeer" />
     </div>
   </div>
 </template>
@@ -35,9 +76,14 @@ import PersonContacts from "./components/PersonContacts";
 import PersonEmployment from "./components/PersonEmployment";
 import PersonAddress from "./components/PersonAddress";
 import PersonSubscription from "./components/PersonSubscription";
+import DislikeButton from "./components/DislikeButton";
+import LikeButton from "./components/LikeButton";
 
 export default {
-  components: {PersonSubscription, PersonAddress, PersonEmployment, PersonContacts, PersonInfo, PersonAvatar},
+  components: {
+    LikeButton,
+    DislikeButton,
+    PersonSubscription, PersonAddress, PersonEmployment, PersonContacts, PersonInfo, PersonAvatar},
   data() {
     return {
       user: {
@@ -77,7 +123,18 @@ export default {
           term: '',
         },
       },
-      beer: {}
+      beer: {
+        brand: '',
+        name: '',
+        style: '',
+        hop: '',
+        yeast: '',
+        malts: '',
+        ibu: '',
+        alcohol: '',
+        blg: '',
+      },
+      likedBeer: [],
     }
   },
   methods: {
@@ -98,6 +155,10 @@ export default {
       } catch (e) {
         console.log(e);
       }
+    },
+    likeBeer() {
+        this.likedBeer.push(this.beer.name);
+        this.fetchBeer();
     }
   },
   mounted() {
@@ -143,5 +204,7 @@ body {
 .person__item {
   width: 100%;
   margin: 2rem;
+}
+.beer {
 }
 </style>
