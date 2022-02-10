@@ -55,4 +55,13 @@ export default {
   }
 }
 
+@media (max-width: 450px) {
+  .employment__section {
+    flex-wrap: wrap;
+  }
+  .employment__section span {
+    width: 100%;
+  }
+}
+
 </style>

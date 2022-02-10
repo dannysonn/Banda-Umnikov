@@ -70,4 +70,13 @@ export default {
 .subscription__section span:first-child {
   color: #B3B3B3;
 }
+
+@media (max-width: 450px) {
+  .subscription__section {
+    flex-wrap: wrap;
+  }
+  .subscription__section span {
+    width: 100%;
+  }
+}
 </style>

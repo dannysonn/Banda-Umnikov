@@ -86,4 +86,13 @@ export default {
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 450px) {
+  .address__section {
+    flex-wrap: wrap;
+  }
+  .address__section span {
+    width: 100%;
+  }
+}
 </style>

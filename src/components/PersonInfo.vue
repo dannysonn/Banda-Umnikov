@@ -78,4 +78,13 @@ export default {
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 450px) {
+  .info__section {
+    flex-wrap: wrap;
+  }
+  .info__section span {
+    width: 100%;
+  }
+}
 </style>

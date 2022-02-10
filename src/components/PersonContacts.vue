@@ -55,4 +55,13 @@ export default {
   }
 }
 
+@media (max-width: 450px) {
+  .contacts__section {
+    flex-wrap: wrap;
+  }
+  .contacts__section span {
+    width: 100%;
+  }
+}
+
 </style>
