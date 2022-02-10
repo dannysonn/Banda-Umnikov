@@ -37,14 +37,22 @@ export default {
   display: flex;
   justify-content: space-between;
 
-  padding: 0 2rem 1rem;
+  padding: 0 0 1rem;
   margin: 1rem 0;
 
   border-bottom: 1px solid #B3B3B3;
+  text-align: left;
 }
 
 .employment__section span:first-child {
   color: #B3B3B3;
+}
+
+@media (max-width: 550px) {
+  .employment__section {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 </style>

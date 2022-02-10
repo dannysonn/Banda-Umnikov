@@ -36,12 +36,10 @@
     </div>
 
     <footer>
-      <div class="beer">
         <beer :name="beer.name" :brand="beer.brand" :blg="beer.blg" :alcohol="beer.alcohol"
               :ibu="beer.ibu" :malts="beer.malts" :yeast="beer.yeast" :style="beer.style" :hop="beer.hop"
               :likedBeer="likedBeer" :fetchBeer="fetchBeer" :likeBeer="likeBeer"
         />
-      </div>
     </footer>
   </div>
 </template>
@@ -192,12 +190,12 @@ main {
 
 .app__title {
   width: 100%;
-  height: 2em;
+  height: 3em;
 
   background: black;
 
   text-align: center;
-  line-height: 2em;
+  line-height: 3em;
 }
 
 body {
@@ -205,7 +203,7 @@ body {
 }
 
 .person {
-  width: 70%;
+  width: 65%;
 
   display: flex;
   flex-wrap: wrap;
@@ -233,5 +231,44 @@ body {
   text-align: left;
 
   margin-bottom: 2rem;
+}
+
+@media (max-width: 870px) {
+  .person {
+    padding: 0 2rem;
+  }
+
+  .person__item:first-child {
+    margin-top: 1rem;
+  }
+
+  .app__title {
+    height: 3em;
+    line-height: 3em;
+  }
+}
+
+@media (max-width: 550px) {
+  * {
+    font-size: 12px !important;
+  }
+
+  h1 {
+    font-size: 40px !important;
+  }
+
+  h2 {
+    font-size: 24px !important;
+  }
+
+  .app__title {
+    height: 3.5em;
+    line-height: 3.5em;
+  }
+
+  .app__title h2 {
+    font-size: 24px;
+  }
+
 }
 </style>

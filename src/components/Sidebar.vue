@@ -11,7 +11,7 @@
     </div>
     <div class="favorite__beer">
       <div v-if="likedBeer.length > 0">
-        <span><b>Favorite beer:</b> {{ Array.from(new Set(likedBeer)).map(item => '"' + item + '"').toString() }}</span>
+        <div><b>Favorite beer:</b></div> <div>{{ Array.from(new Set(likedBeer)).map(item => '"' + item + '"' + '\n').toString()}}</div>
       </div>
       <div v-else>
         <span><b>Favorite beer:</b> favorite beer will be here...</span>
@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .sidebar {
-  width: 30%;
+  width: 35%;
 
   background-color: #1b1b1b;
 
@@ -62,5 +62,22 @@ export default {
 
 .favorite__beer {
   margin-top: 2rem;
+
+  padding: 0 2rem;
+
+  text-align: left;
+}
+
+@media (max-width: 870px) {
+  .sidebar {
+    padding: 0;
+  }
+
+@media (max-width: 450px) {
+  .favorite__beer {
+    padding-right: 4rem;
+  }
+}
+
 }
 </style>

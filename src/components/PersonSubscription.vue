@@ -63,6 +63,8 @@ export default {
   display: flex;
   justify-content: space-between;
   margin: 2rem;
+
+  text-align: left;
 }
 
 .subscription__section span:first-child {
